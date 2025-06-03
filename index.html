@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bawang Goreng Brebes Asli</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8f0;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #b34700;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    img {
+      display: block;
+      max-width: 90%;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    .content {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .price {
+      font-size: 1.5em;
+      color: #d35400;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    .cta {
+      background: #ff8000;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+    .cta:hover {
+      background: #e67300;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Bawang Goreng Asli Brebes</h1>
+  <p>Gurih, Renyah, dan Tahan Lama!</p>
+</header>
+
+<!-- Gambar -->
+<img src="bawang-goreng.jpg" alt="Bawang Goreng Brebes">
+
+<div class="content">
+  <h2>100% Bawang Merah Asli Brebes</h2>
+  <p>Dikemas higienis dan cocok untuk rumah tangga maupun usaha kuliner.</p>
+  <div class="price">Harga: Rp95.000 / Kg</div>
+
+  <!-- Formulir -->
+  <form id="orderForm">
+    <input type="text" id="name" placeholder="Nama Anda" required>
+    <input type="text" id="address" placeholder="Alamat Lengkap" required>
+    <select id="size">
+      <option value="500 gram">500 Gram - Rp50.000</option>
+      <option value="1 kilogram">1 Kilogram - Rp95.000</option>
+    </select>
+    <input type="number" id="qty" placeholder="Jumlah (misal: 2)" required>
+    <button type="button" class="cta" onclick="sendWA()">Pesan via WhatsApp</button>
+  </form>
+</div>
+
+<script>
+  function sendWA() {
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const size = document.getElementById("size").value;
+    const qty = document.getElementById("qty").value;
+
+    const message = `Halo, saya ingin pesan bawang goreng:
+Nama: ${name}
+Alamat: ${address}
+Paket: ${size}
+Jumlah: ${qty}`;
+
+    const url = `https://wa.me/6285702056413?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
